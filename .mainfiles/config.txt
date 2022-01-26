@@ -1,0 +1,79 @@
+NOTE - MODIFYING THIS FILE IN UNINTENDED WAYS WILL CAUSE THE PROGRAM TO CRASH
+NOTE - ADDING EXTRA SPACES AT THE END IS NOT OK
+Refreshing (Pressing R) will take changes in config.
+Just make sure you actually saved the file.
+Write the intended values after equal signs (with a space).
+*If no accepted value is specified then you can assume everything is accepted.
+e.g. 'You poopie' = Hah
+
+1) Which state should the program start on? (Loop is #7)
+Default: Default
+Accepted values: All, Chronological, Default
+
+'statedefault' = Default
+
+2) Autopause on startup?
+Default: False (Invalid Values)
+Accepted values: True/False
+
+'autopause' = False
+
+3) Default Song to Start on. (1 Based)
+Default: Invalid value (no)
+If you want to start with a random song, just put an invalid value.
+Accepted values: Any numbers within the default Track / All of them combined (depending on what you start on)
+'defaultSongnumber' = no
+
+4) Default Track to start on. (1 Based)
+Default: Invalid value (no)
+If you want to start with the first track, just put an invalid value.
+Accepted values: Within the number of Tracks availible. Cmon, its not that hard.
+'defaultTracknumber' = no
+
+5) Volume on Startup?
+Default value: 0.5
+Accepted values: 0-1 up to tenth places.
+
+'volume' = 0.5
+
+6)How many ticks should be in between animation refreshs?
+Note: Lower number means faster animation which means more resources used.
+However, this player uses very little resources. I recommend you change just for visuals
+Default (Recommended) value: 3.
+Animations use 24 frames/second (60tps), which is a refresh rate of 2.5. Round that to get 3.
+Accepted values: Any whole numbers. (0 IS INVALID)
+'animationrefresh' = 3
+
+7) Start with a loop (THE most dumb setting I put in)
+Default value: False (Invalid Values)
+Accepted Values: True/False
+
+'LoopOnStartup' = False
+
+FROM NOW ON ITS ABRITRARY FLAVOR TEXT.
+YOU DO NOT NEED TO CHANGE IT TO HAVE A FULL EXPERIENCE.
+
+8) Error text
+Default value: ERROR
+
+'error' = ERROR
+
+9) What should the goodbye message be?
+Default value: Done playing music! Have a wywy day!
+
+'goodbye' = Done playing music! Have a wywy day!
+
+10) What should the warning be when an invalid search is entered?
+Default value: You didn't search anything! Lmao
+
+'nosearch' = You didn't search anything! Lmao
+
+11) What should the warning be when attempted to do something while searching?
+Default value: Cmon, stop searching before you unpause!
+
+'searchguardian' = Cmon, stop searching before you unpause!
+
+12) What should the warning be when attempting to do something while looping?
+Default value: Stop right there! Disable loop (L key) before doing other things. - Your local Program Guardian
+
+'loopguardian' = Stop right there! Disable loop (L key) before doing other things. - Your local Program Guardian

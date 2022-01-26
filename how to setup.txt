@@ -1,0 +1,63 @@
+How to set this pooper up!
+
+If you already have python and the proper modules installed, then run the program.
+
+Batch files (.bat) are for Windows
+
+Sh files are for MACOS
+
+and I dunno whats for Linux.
+
+If none of the above work, run the python file directly (using IDLE and F5 or through python)
+
+Lost on the first run of the program? No problem! Press the I button for more info.
+
+
+First Timers, Read Below :D
+
+Step 1: Get python
+
+Just install it from python.org
+
+https://www.python.org/downloads/
+
+It's not a virus, its one of the most popular programming languages. (I'M LOOKING AT YOU WEIDEN)
+
+Install according to your OS, blah blah
+
+Disclaimer (taken from pygame website):
+Make sure you install python with the "Add python to PATH" option selected. This means that python, and pip will work for you from the command line.
+
+For EVERYONE:
+
+Follow steps here:https://www.pygame.org/wiki/GettingStarted
+
+and run the same thing again, but this with soundfile in the place of pygame.
+
+For Windows Ppl:
+
+Step 2: Install pygame
+
+run this in cmd
+
+py -m pip install -U pygame --user
+
+(Taken from pygame website)
+
+Step 3: Install soundfile.
+
+Same thing, just replace pygame with soundfile.
+
+py -m pip install -U soundfile --user
+
+
+For MacOS Ppl:
+
+I don't have Mac and therefore can't garentee this works.
+
+Go to pygame's website on installation:
+https://www.pygame.org/wiki/GettingStarted
+
+Follow the steps there.
+
+Repeat but replace pygame with soundfile.

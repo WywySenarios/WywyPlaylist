@@ -1,0 +1,102 @@
+Hi! You pressed the info button (I). Here's some information! (Disclaimers at bottom)
+
+BASICS
+
+I - Information (omg I can't understand the text above and its Always enabled)
+
+R - Refresh files/program (Always enabled)
+
+Escape - Stop playing music. Ends the player. (Always enabled)
+
+Space - New song (Generated based on current parameters)
+
+Enter/Return/Pause/P - Pause (Enabled except when searching)
+
+-/+/= - Volume up/down (Always enabled)
+
+M - Max volume (Always enabled)
+
+V - Default volume (50/100) (Always enabled)
+
+Apostraphe (' or ") - Indexs (numbers) all songs in the current track/instance.
+E.g. I'm playing .Playlists and it lists all the songs and the numbers that correspond to them.
+Useful for searching!
+
+STATES
+
+L - Loop current song. Most all other keys until looping is stopped.
+During loop, the loop and pause buttons are enabled. (Nothing else unless specified)
+Loop can be combined with all different states! (Consider the sentence above however)
+
+D/U - Default (Randomly shuffled)
+In Default mode, all buttons are enabled.
+
+C/O - Chronologically play music (like, alphabetical order)
+In Chronological mode, all buttons are enabled.
+
+A/K - All (prehaps buggy, though bugs should all be gone)
+In All mode, it plays all the songs from all your tracks.
+
+NAVIGATION
+
+Y - Youtube to wav converter (Always enabled)
+https://loader.to/en58/youtube-wav-converter.html
+
+G - Gif to images converter (Always enabled)
+https://ezgif.com/split
+
+Page up/down - Switch Track
+
+W/S Up/Down (arrow keys) - Go up/down the songs (like, alphabetical order)
+
+Pause/P/Enter - pause
+
+Semicolon (;) - Search toggle
+Press this key, then press the number keys to search for the song you want. Press again to finish searching.
+
+0-9 - Skip to checkpoints in song (Key * Length/9)
+OR Search
+
+0-9 (Numberpad) - Loudness checkpoints (Key * 10 loudness) (Always enabled)
+
+Oh no! I wanna get a youtube video but don't have it as a sound file!
+
+https://loader.to/en20/youtube-ogg-converter.html
+
+https://loader.to/en20/youtube-wav-converter.html
+
+sometimes pygame is weird and different file formats don't work.
+
+try wav and ogg files. 
+I Recommend Wav very much but it takes more (still very little) of disc space
+
+Oh no! I wanna convert files but 3 at a time is too slow!
+
+https://online-audio-converter.com/
+
+drag 5 files at a time and wait for them to convert. You only need to press download button once.
+
+So almost 2 times less dragging and a lot of saving of clicks.
+
+Make shortcuts for the batch files to open the playlist straight from your desktop or a desired location.
+
+I heard SH files are for mac, and I don't know if they work. Soooo, yeah.
+
+DISCLAIMERS ---------- DISCLAIMERS
+
+MOST IMPORTANT - BE RESONABLE. Don't delete anything you don't know its purpose. It might crash the program.
+(Why would it be there if it had no purpose?)
+
+If the program crashes or is frozen, try closing it (ending the task is fine) and rebooting the program.
+If python threw an exception, just tell me what happened (99.9999% of the time you did some whacky combination of commands that did something weird)
+Speaking of shouting at me: only shout at me when you can reproduce what happened.
+Also, I need error messages. Just run the debug and it will pause instead of timing out so you can see what the error was.
+(I would like the know the config as well, maybe because it does some whacky stuff)
+Don't rush me. I'm a normal human. I won't really fix it in a snap.
+Don't scream at me for mistakes. I make them all of the time! Just like you :)
+*Sometimes pygame crashes randomly when initailizing. Again, just reboot.
+
+If somehow you manage to corrupt some files, try deleting the log (.mainfiles\log.txt).
+If that doesn't work, try a fresh download (This'll work unless pythons poopie)
+
+Have fun! - Wywy and Eric.
