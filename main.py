@@ -459,7 +459,10 @@ while singing:
                 setup()
             elif event.key == pygame.K_QUOTE:
                 for x in range(len(current)):
-                    print(str(x + 1) + ' - ' + current[x])
+                    y = current[x][:-4]
+                    if state == 'All':
+                        y = y[y.find('\\', 8) + 1: -4]
+                    print(str(x + 1) + ' - ' + y)
             elif searching == True:
                 if event.key == pygame.K_SEMICOLON:
                     searchit('toggle')
