@@ -502,25 +502,25 @@ while singing:
                 if event.key == pygame.K_SEMICOLON:
                     searchit('toggle')
                 elif event.key == pygame.K_1:
-                    newsong(0, int(len(current) / 10 * 1) - 1)
+                    newsong(0, int(len(current) / 10 * 1))
                 elif event.key == pygame.K_2:
-                    newsong(0, int(len(current) / 10 * 2) - 1)
+                    newsong(0, int(len(current) / 10 * 2))
                 elif event.key == pygame.K_3:
-                    newsong(0, int(len(current) / 10 * 3) - 1)
+                    newsong(0, int(len(current) / 10 * 3))
                 elif event.key == pygame.K_4:
-                    newsong(0, int(len(current) / 10 * 4) - 1)
+                    newsong(0, int(len(current) / 10 * 4))
                 elif event.key == pygame.K_5:
-                    newsong(0, int(len(current) / 10 * 5) - 1)
+                    newsong(0, int(len(current) / 10 * 5))
                 elif event.key == pygame.K_6:
-                    newsong(0, int(len(current) / 10 * 6) - 1)
+                    newsong(0, int(len(current) / 10 * 6))
                 elif event.key == pygame.K_7:
-                    newsong(0, int(len(current) / 10 * 7) - 1)
+                    newsong(0, int(len(current) / 10 * 7))
                 elif event.key == pygame.K_8:
-                    newsong(0, int(len(current) / 10 * 8) - 1)
+                    newsong(0, int(len(current) / 10 * 8))
                 elif event.key == pygame.K_9:
-                    newsong(0, int(len(current) / 10 * 9) - 1)
+                    newsong(0, int(len(current) / 10 * 9))
                 elif event.key == pygame.K_0:
-                    newsong(0, 0)
+                    newsong(0, 1)
                 elif event.key == pygame.K_SPACE:
                     newsong(0, no)
                 elif event.key == pygame.K_PAGEDOWN:
