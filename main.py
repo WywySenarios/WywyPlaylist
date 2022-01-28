@@ -26,11 +26,10 @@ clock = pygame.time.Clock()
 
 
 def newsong(increment, skipto):
-    global nowsong, nowsongprint, no
-    global wywydir, wywyquestion
+    global nowsong, nowsongprint
+    global wywyquestion
     global length, songtotal
-    global state, tracks, loop
-    global everysong, current
+    global everysong, wywymusic, current
     if state == 'All':
         current = everysong
     else:
@@ -69,13 +68,12 @@ def newsong(increment, skipto):
 
 
 def switchtrack(direction):
-    global wywymusic, current
+    global wywymusic
     global pathnamealt
     global pathname
-    global tracks
     global trainindex
     global wywydir
-    global longest, state
+    global longest
     if state == 'All':
         print('Dude, switch from all mode to something else!')
     if direction == 'LEFT':
@@ -100,27 +98,25 @@ def switchtrack(direction):
 
 
 def repastetext():
-    global current, wywymusic, everysong, nowsong
-    global fonds, fondsfr, longest
-    global pause
-    global volume
-    global state
-    global rainbowbk
-    global rainbow1
+    space = screen.get_width() / 2
     rainbowbk = rainbows(path.join('.mainfiles', 'animations', allrainbow[rainbow1]), [0, 0])
     screen.blit(rainbowbk.image, rainbowbk, rainbowbk.rect)
 
     if screen.get_width() / longest < screen.get_height() / len(current):
-        fonds[3] = pygame.font.SysFont('Verdana', int(screen.get_width() / 6 * 8 / longest))
+        fonds[3] = pygame.font.SysFont('Verdana', int(screen.get_width() * 1.6 / longest))
     else:
-        fonds[3] = pygame.font.SysFont('Verdana', int(screen.get_height() / 8 * 6 / len(current)))
+        fonds[3] = pygame.font.SysFont('Verdana', int(screen.get_height() / len(current)))
 
     for x in range(len(current)):
         texting = current[x][:-4]
         sending = fonds[3].render(texting, False, WHITE)
         screen.blit(sending, (0, x * (int(screen.get_height() / len(current)))))
 
-    songl()
+    seconds = int(pygame.mixer.music.get_pos() / 1000)
+    screen.blit(fondsfr[2], (screen.get_width() - 170, 45))
+    pygame.draw.rect(screen, BLACK, pygame.Rect(screen.get_width() - 107 + int(seconds / songtotal * 100), 45, 100 - int(seconds / songtotal * 100), 15))
+    pygame.draw.rect(screen, WHITE, pygame.Rect(screen.get_width() - 107, 45, 100, 15), 2)
+    pygame.draw.rect(screen, WHITE, pygame.Rect(screen.get_width() - 107, 45, int(seconds / songtotal * 100), 15))
 
     trackingnowsong = int((current.index(nowsong) + 1) / len(current) * 100)
 
@@ -156,38 +152,24 @@ def repastetext():
         pygame.draw.rect(screen, RED, outline_rect[1], 2)
     else:
         pygame.draw.rect(screen, WHITE, outline_rect[1], 2)
-    global loop, searching
     statemsg = state
     if loop == True:
         statemsg += ' Looping'
     if searching == True:
         statemsg += '(Searching)'
+        searchsend = fonds[1].render(search1, False, BLACK)
+        screen.blit(searchsend, (space, 100))
     statesend = fonds[1].render(statemsg, False, BLACK)
-    screen.blit(statesend, ((screen.get_width() - 40 * 7) / 2, 10))
+    screen.blit(statesend, (space, 10))
     if pause == True:
         pausesend = fonds[1].render('Paused', False, BLACK)
     else:
         pausesend = fonds[1].render('Playing', False, BLACK)
-    screen.blit(pausesend, ((screen.get_width() - 40 * 7) / 2, 40))
+    screen.blit(pausesend, (space, 40))
     timesend = fonds[1].render(datetime.now().strftime("%H:%M"), False, BLACK)
-    screen.blit(timesend, ((screen.get_width() - 40 * 7) / 2, 70))
-
-    global search1
-    searchsend = fonds[1].render(search1, False, BLACK)
-    screen.blit(searchsend, ((screen.get_width() - 40 * 7) / 2, 100))
+    screen.blit(timesend, (space, 70))
 
     pygame.display.flip()
-
-
-def songl():
-    global seconds, length, fondsfr
-    seconds = int(pygame.mixer.music.get_pos() / 1000)
-    screen.blit(fondsfr[2], (screen.get_width() - 170, 45))
-    pygame.draw.rect(screen, BLACK, pygame.Rect(screen.get_width() - 107 + int(seconds / songtotal * 100), 45,
-                                                100 - int(seconds / songtotal * 100), 15))
-    pygame.draw.rect(screen, WHITE, pygame.Rect(screen.get_width() - 107, 45, 100, 15), 2)
-    pygame.draw.rect(screen, WHITE, pygame.Rect(screen.get_width() - 107, 45, int(seconds / songtotal * 100), 15))
-
 
 def loudness(increment, set):
     global volume
@@ -202,7 +184,7 @@ def loudness(increment, set):
 
 
 def endit():
-    global singing, configs
+    global singing
     pygame.mixer.music.unload()
     pygame.mixer.music.load(path.join('.mainfiles', 'done.wav'))
     pygame.mixer.music.play(loops=0)
@@ -213,7 +195,7 @@ def endit():
 
 
 def paused():
-    global pause, searching
+    global pause
     if pause == True:
         pause = False
         pygame.mixer.music.unpause()
@@ -248,7 +230,6 @@ def switchstate(newstate):
     elif newstate == 'All':
         state = newstate
         print('Playing All')
-        global everysong
         current = everysong
         newsong(0, no)
     else:
@@ -267,7 +248,7 @@ def switchstate(newstate):
 
 
 def searchit(what):
-    global searching, search1, pause, current, wywymusic, everysong
+    global searching, search1, current
     if what == 'toggle':
         if searching == False:
             searching = True
@@ -317,7 +298,7 @@ def setup():
     global pathname, pathnamealt
     global wywymusic, wywydir, wywyquestion, everysong, current
     global volume, pause, info
-    global allrainbow, songlrefresh, songlrefreshrate, refreshing
+    global allrainbow, refreshing
     global rainbow, rainbow1, allrainbow
     global no, nowsong, nowsongprint, state, configs, search1, searching, loop
     allrainbow = os.listdir(path.join('.mainfiles', 'animations'))
@@ -334,8 +315,7 @@ def setup():
     pygame.mixer.music.set_volume(volume)
     no = nowsong = nowsongprint = configs[8]
     logit(configs, no)
-    songlrefresh = rainbow = rainbow1 = 0
-    songlrefreshrate = 0
+    rainbow = rainbow1 = 0
     refreshing = int(configs[6])
     print(datetime.now().strftime("%H:%M:%S"))
     logit(datetime.now().strftime("%A %d. %B %Y"), no)
@@ -380,7 +360,7 @@ def setup():
         newsong(0, bruh)
     except:
         newsong(0, no)
-        logit("Invalid start song - reverted to random start song. (Note, this isn't really an error)", no)
+        logit("Invalid start song - reverted to random start song. (Note, this is not necessarily an error)", no)
     if configs[7] == 'True':
         loop = True
     else:
@@ -395,17 +375,14 @@ setup()
 while singing:
     clock.tick(60)
 
-    songlrefresh += 1
     rainbow += 1
     if rainbow == refreshing:
-        repastetext()
+        rainbow = 0
         if pause == False:
             rainbow1 += 1
-        rainbow = 0
-        if rainbow1 > len(os.listdir(path.join('.mainfiles', 'animations'))) - 1:
-            rainbow1 = 0
-    elif songlrefresh == songlrefreshrate:
-        songl()
+            if rainbow1 > len(os.listdir(path.join('.mainfiles', 'animations'))) - 1:
+                rainbow1 = 0
+        repastetext()
 
     if pygame.mixer.music.get_busy() != 1 and pause == False:
         newsong(0, no)
@@ -420,28 +397,8 @@ while singing:
                 loudness(0.05, no)
             elif event.key == pygame.K_MINUS:
                 loudness(-0.05, no)
-            elif event.key == pygame.K_KP_0:
-                loudness(0, 0.0)
-            elif event.key == pygame.K_KP_1:
-                loudness(0, 0.1)
-            elif event.key == pygame.K_KP_2:
-                loudness(0, 0.2)
-            elif event.key == pygame.K_KP_3:
-                loudness(0, 0.3)
-            elif event.key == pygame.K_KP_4:
-                loudness(0, 0.4)
             elif event.key == pygame.K_v:
                 loudness(0, 0.5)
-            elif event.key == pygame.K_KP_5:
-                loudness(0, 0.5)
-            elif event.key == pygame.K_KP_6:
-                loudness(0, 0.6)
-            elif event.key == pygame.K_KP_7:
-                loudness(0, 0.7)
-            elif event.key == pygame.K_KP_8:
-                loudness(0, 0.8)
-            elif event.key == pygame.K_KP_9:
-                loudness(0, 0.9)
             elif event.key == pygame.K_m:
                 loudness(0, 1)
             elif event.key == pygame.K_SEMICOLON:
@@ -461,7 +418,7 @@ while singing:
                 for x in range(len(current)):
                     y = current[x][:-4]
                     if state == 'All':
-                        y = y[y.find('\\', 8) + 1: -4]
+                        y = y[y.find('\\', 8) + 1:]
                     print(str(x + 1) + ' - ' + y)
             elif searching == True:
                 if event.key == pygame.K_SEMICOLON:
@@ -491,8 +448,6 @@ while singing:
             elif loop == True:
                 if event.key == pygame.K_l:
                     switchstate('Loop')
-                elif event.key == pygame.K_PAUSE:
-                    paused()
                 elif event.key == pygame.K_p:
                     paused()
                 elif event.key == pygame.K_RETURN:
@@ -538,8 +493,6 @@ while singing:
                     newsong(1, no)
                 elif event.key == pygame.K_DOWN:
                     newsong(-1, no)
-                elif event.key == pygame.K_PAUSE:
-                    paused()
                 elif event.key == pygame.K_p:
                     paused()
                 elif event.key == pygame.K_RETURN:
@@ -550,14 +503,8 @@ while singing:
                     switchstate('Loop')
                 elif event.key == pygame.K_d:
                     switchstate('Default')
-                elif event.key == pygame.K_u:
-                    switchstate('Default')
                 elif event.key == pygame.K_c:
                     switchstate('Chronological')
-                elif event.key == pygame.K_o:
-                    switchstate('Chronological')
                 elif event.key == pygame.K_a:
-                    switchstate('All')
-                elif event.key == pygame.K_k:
                     switchstate('All')
 pygame.quit()

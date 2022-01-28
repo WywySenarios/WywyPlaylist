@@ -28,13 +28,13 @@ L - Loop current song. Most all other keys until looping is stopped.
 During loop, the loop and pause buttons are enabled. (Nothing else unless specified)
 Loop can be combined with all different states! (Consider the sentence above however)
 
-D/U - Default (Randomly shuffled)
+D - Default (Randomly shuffled)
 In Default mode, all buttons are enabled.
 
-C/O - Chronologically play music (like, alphabetical order)
+C - Chronologically play music (like, alphabetical order)
 In Chronological mode, all buttons are enabled.
 
-A/K - All (prehaps buggy, though bugs should all be gone)
+A - All (prehaps buggy, though bugs should all be gone)
 In All mode, it plays all the songs from all your tracks.
 
 NAVIGATION
@@ -49,15 +49,13 @@ Page up/down - Switch Track
 
 W/S Up/Down (arrow keys) - Go up/down the songs (like, alphabetical order)
 
-Pause/P/Enter - pause
+P/Enter - pause
 
 Semicolon (;) - Search toggle
 Press this key, then press the number keys to search for the song you want. Press again to finish searching.
 
 0-9 - Skip to checkpoints in song (Key * Length/9)
 OR Search
-
-0-9 (Numberpad) - Loudness checkpoints (Key * 10 loudness) (Always enabled)
 
 Oh no! I wanna get a youtube video but don't have it as a sound file!
 
