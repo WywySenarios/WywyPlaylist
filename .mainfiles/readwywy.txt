@@ -22,6 +22,9 @@ Apostraphe (' or ") - Indexs (numbers) all songs in the current track/instance.
 E.g. I'm playing .Playlists and it lists all the songs and the numbers that correspond to them.
 Useful for searching!
 
+Put sound files inside folders inside the .tracks folder. Easy!
+AKA Put a folder in the .tracks folder and put the sound files inside there.
+
 STATES
 
 L - Loop current song. Most all other keys until looping is stopped.

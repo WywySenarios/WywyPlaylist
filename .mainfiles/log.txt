@@ -1,0 +1,7 @@
+14:27:12 - ['Hah', 'Default', 'False', 'no', 'All', '0.5', '3', '24hrs', 'ERROR', 'Done playing music! Have a wywy day!', "You didn't search anything! Lmao", 'Cmon, stop searching before you unpause!', 'Stop right there! Disable loop (L key) before doing other things. - Your local Program Guardian']
+14:27:12 - Saturday 19. February 2022
+14:27:12 - Now playing Flute
+14:27:12 - Invalid start song - reverted to random start song. (Note, this is not necessarily an error)
+14:27:12 - setup is done
+14:27:24 - Now playing Thanks
+14:27:25 - Done playing music! Have a wywy day!

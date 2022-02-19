@@ -6,9 +6,9 @@ Write the intended values after equal signs (with a space).
 *If no accepted value is specified then you can assume everything is accepted.
 e.g. 'You poopie' = Hah
 
-1) Which state should the program start on? (Loop is #7)
+1) Which state should the program start on?
 Default: Default
-Accepted values: All, Chronological, Default
+Accepted values: Default, Chronological, Loop
 
 'statedefault' = Default
 
@@ -24,11 +24,11 @@ If you want to start with a random song, just put an invalid value.
 Accepted values: Any numbers within the default Track / All of them combined (depending on what you start on)
 'defaultSongnumber' = no
 
-4) Default Track to start on. (1 Based)
-Default: Invalid value (no)
+4) Default Track to start on (or all of them). (1 Based)
+Default: All
 If you want to start with the first track, just put an invalid value.
-Accepted values: Within the number of Tracks availible. Cmon, its not that hard.
-'defaultTracknumber' = no
+Accepted values: Within the number of Tracks availible or 'All'. Cmon, its not that hard.
+'defaultTracknumber' = All
 
 5) Volume on Startup?
 Default value: 0.5
@@ -36,19 +36,18 @@ Accepted values: 0-1 up to tenth places.
 
 'volume' = 0.5
 
-6)How many ticks should be in between animation refreshs?
+6)How many ticks should be in between animation refreshs? There is a maximum of 24 TPS.
 Note: Lower number means faster animation which means more resources used.
 However, this player uses very little resources. I recommend you change just for visuals
-Default (Recommended) value: 3.
-Animations use 24 frames/second (60tps), which is a refresh rate of 2.5. Round that to get 3.
+Default value: 3
 Accepted values: Any whole numbers. (0 IS INVALID)
 'animationrefresh' = 3
 
-7) Start with a loop (THE most dumb setting I put in)
-Default value: False (Invalid Values)
-Accepted Values: True/False
+7) Clock type
+Accepted Values: 24hrs/12hrs
+Default value: 24hrs
 
-'LoopOnStartup' = False
+'clocktype' = 24hrs
 
 FROM NOW ON ITS ABRITRARY FLAVOR TEXT.
 YOU DO NOT NEED TO CHANGE IT TO HAVE A FULL EXPERIENCE.
